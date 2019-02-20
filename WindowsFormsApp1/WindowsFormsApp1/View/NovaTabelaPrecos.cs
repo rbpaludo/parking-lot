@@ -89,8 +89,6 @@ namespace Estacionamento.View
                             precoSobreposto.FimVigencia = dataInicioVigencia.AddDays(1);
                             precoController.AtualizarVigenciaPreco(precoSobreposto);
 
-                            MessageBox.Show("Pelo menos atualizar ele atualiza!");
-
                             Double.TryParse(textBoxPrimeiraHora.Text, out primeiraHora);
                             Double.TryParse(textBoxHoraAdicional.Text, out horaAdicional);
                             precoController.RegistrarTabelaPrecos(new Preco(-1,
