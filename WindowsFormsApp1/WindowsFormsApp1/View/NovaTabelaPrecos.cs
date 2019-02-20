@@ -88,6 +88,18 @@ namespace Estacionamento.View
                         {
                             precoSobreposto.FimVigencia = dataInicioVigencia.AddDays(1);
                             precoController.AtualizarVigenciaPreco(precoSobreposto);
+
+                            MessageBox.Show("Pelo menos atualizar ele atualiza!");
+
+                            Double.TryParse(textBoxPrimeiraHora.Text, out primeiraHora);
+                            Double.TryParse(textBoxHoraAdicional.Text, out horaAdicional);
+                            precoController.RegistrarTabelaPrecos(new Preco(-1,
+                                primeiraHora,
+                                horaAdicional,
+                                dataInicioVigencia.ToString(),
+                                dataFimVigencia.ToString()));
+                            MessageBox.Show("Tabela de preços registrada com sucesso!");
+                            Close();
                         }
                     }
                     else if (vigenciaSobrepoeInicio)
@@ -103,6 +115,16 @@ namespace Estacionamento.View
                         {
                             precoSobreposto.InicioVigencia = dataFimVigencia.AddDays(1);
                             precoController.AtualizarVigenciaPreco(precoSobreposto);
+
+                            Double.TryParse(textBoxPrimeiraHora.Text, out primeiraHora);
+                            Double.TryParse(textBoxHoraAdicional.Text, out horaAdicional);
+                            precoController.RegistrarTabelaPrecos(new Preco(-1,
+                                primeiraHora,
+                                horaAdicional,
+                                dataInicioVigencia.ToString(),
+                                dataFimVigencia.ToString()));
+                            MessageBox.Show("Tabela de preços registrada com sucesso!");
+                            Close();
                         }
                     }
                     else

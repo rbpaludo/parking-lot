@@ -58,8 +58,8 @@ namespace Estacionamento.Controller
         {
             if (preco.FimVigencia != null &&
                 preco.InicioVigencia != null &&
-                preco.HoraInicial <= 0 &&
-                preco.HoraAdicional <= 0)
+                preco.HoraInicial > 0 &&
+                preco.HoraAdicional > 0)
             {
                 using (IDbConnection cnn = new SQLiteConnection(SqlAccess.LoadConnectionString()))
                 {

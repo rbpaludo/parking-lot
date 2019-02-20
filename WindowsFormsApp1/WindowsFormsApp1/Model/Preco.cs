@@ -25,7 +25,7 @@ namespace Estacionamento.Model
         {
             if (id >= 0)
             {
-                this.id = id;
+                this.Id = id;
             }
             DateTime.TryParse(inicioVigencia, out this.inicioVigencia);
             DateTime.TryParse(fimVigencia, out this.fimVigencia);
@@ -37,5 +37,6 @@ namespace Estacionamento.Model
         public DateTime FimVigencia { get => fimVigencia; set => fimVigencia = value; }
         public double HoraInicial { get => horaInicial; set => horaInicial = value; }
         public double HoraAdicional { get => horaAdicional; set => horaAdicional = value; }
+        public long Id { get => id; set => id = value; }
     }
 }

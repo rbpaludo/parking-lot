@@ -18,8 +18,8 @@ namespace Estacionamento.Model
         public Registro(string placa, String horaEntrada, String horaSaida, double primeiraHora, double horaAdicional, double valorTotal)
         {
             this.placa = placa;
-            this.horaEntrada = DateTime.Parse(horaEntrada);
-            this.horaSaida = DateTime.Parse(horaSaida);
+            DateTime.TryParse(horaEntrada, out this.horaEntrada);
+            DateTime.TryParse(horaSaida, out this.horaSaida);
             this.PrimeiraHora = primeiraHora;
             this.HoraAdicional = horaAdicional;
             this.ValorTotal = valorTotal;
